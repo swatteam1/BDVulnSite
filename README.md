@@ -17,6 +17,10 @@ Apache
 PHP
 MySQL/MariaDB
 
+Для Windows [XAMPP](https://www.apachefriends.org/ru/index.html) или аналогичный.
+
+Для Unix отлично описано в [этом](https://github.com/teddysun/lamp) репо.
+
 Установка
 ---------
 1) Скопировать файлы в директорию Web сервера
