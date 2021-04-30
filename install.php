@@ -2,7 +2,16 @@
 //Получаем реквизиты для подключения к БД из файла config.php
 require_once("config.php");
 //подключение к БД
-$mysqli = new mysqli($db_server, $db_user, $db_password, $db_db);
+			$str1=base64_decode($str1);
+			$connect=array();
+   			 $array=explode(';',$str1);
+   			 foreach($array as $string){
+        			list($key,$value)=explode(':',$string);
+					array_push($connect,$value);
+  			  	}
+				
+//подключение к БД
+$mysqli = new mysqli($connect[0], $connect[1], $connect[2], $connect[3]);
 //Удаляем старые таблицы
 $result = $mysqli->query("DROP TABLE IF EXISTS `comments`");
 $result = $mysqli->query("DROP TABLE IF EXISTS `users`");
