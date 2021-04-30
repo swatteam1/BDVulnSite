@@ -6,7 +6,7 @@ BD VulnSite
 3) Command Injection
 4) Local File Include (LFI)
 5) раскрытие данных
-6)Сross Site Request Forgery (CSRF)
+6) Сross Site Request Forgery (CSRF)
 
 Создан для базового изучения Web уязвимостей.
 
