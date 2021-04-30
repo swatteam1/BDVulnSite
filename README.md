@@ -28,7 +28,7 @@ MySQL/MariaDB
 3) Указать настройки базы данных в файле parse.php
 4) Выпонить скрипт install.php для заполнения базы данных
 
-Что дальше
+От автора оригинального репо [BlackDiverX](https://github.com/BlackDiverX)/[BDVulnSite](https://github.com/BlackDiverX/BDVulnSite)
 ----------
 Посетите наш сайт, посвященный обучению тестированию на проникновение.
 
