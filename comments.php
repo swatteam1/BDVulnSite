@@ -19,6 +19,14 @@
 		<!-- Начало кода с уязвимостями --!>
 		<?php
 			require_once("config.php");
+			$str1=base64_decode($str1);
+			$connect=array();
+   			 $array=explode(';',$str1);
+   			 foreach($array as $string){
+        			list($key,$value)=explode(':',$string);
+					array_push($connect,$value);
+  			  	}
+					
 			//Форма поиска комментариев
 			echo "<h2>Отзывы о нашей компании</h2>";
 			//Выводим форму поиска
@@ -28,7 +36,7 @@
 			echo "<input type=submit value=Поиск>";
 			echo "</form>";
 			//Подключаемся к базе данных
-			$mysqli = new mysqli($db_server, $db_user, $db_password, $db_db);
+			$mysqli = new mysqli($connect[0], $connect[1], $connect[2], $connect[3]);
 			//Если из формы отправки комментария получены данные, то делаем запись в БД
 			if (!empty($_POST["name"]) && !empty($_POST["comment"])){
 				$name = $_POST["name"];

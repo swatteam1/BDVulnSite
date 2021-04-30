@@ -19,13 +19,20 @@
 		<!-- Начало кода с уязвимостями --!>
 		<?php
 			require_once("config.php");
+			$str1=base64_decode($str1);
+			$connect=array();
+   			 $array=explode(';',$str1);
+   			 foreach($array as $string){
+        			list($key,$value)=explode(':',$string);
+					array_push($connect,$value);
+  			  	}
 			//Если логин и пароль переданы, то пробуем войти
 			if (isset($_POST['username']) || isset($_POST['password'])) {
 				//Назначаем переменные
 				$username = $_POST['username'];
 				$password = $_POST['password'];
 				//Подключаемся к базе данных
-				$mysqli = new mysqli($db_server, $db_user, $db_password, $db_db);
+				$mysqli = new mysqli($connect[0], $connect[1], $connect[2], $connect[3]);
 				//Делаем запрос, где выбираем поля в которых есть одновременно и имя пользователя и пароль
 				$result = $mysqli->query("SELECT * FROM users where name='$username' and password='$password'");
 				$row = $result->fetch_assoc();
