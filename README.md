@@ -7,6 +7,7 @@ BD VulnSite
 4) Local File Inclusion (LFI)
 5) раскрытие данных
 6) Сross Site Request Forgery (CSRF)
+7) перехват трафика
 
 Создан для базового изучения Web уязвимостей.
 
