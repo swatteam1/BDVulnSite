@@ -4,7 +4,7 @@ BD VulnSite
 1) SQL Injection
 2) Cross-Site Scripting (XSS)
 3) Command Injection
-4) Local File Include (LFI)
+4) Local File Inclusion (LFI)
 5) раскрытие данных
 6) Сross Site Request Forgery (CSRF)
 
