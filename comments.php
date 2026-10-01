@@ -70,8 +70,8 @@
 			echo "<input type=submit value=Отправить>";
 			echo "</form>";
 			//Освобождаем память
-			$result->free();
-			$mysqli->close();
+			if ($result) {$result->free();}
+			$mysqli->close();;
 		?>
 		</div>
 	</body>

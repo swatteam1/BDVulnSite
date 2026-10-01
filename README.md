@@ -1,12 +1,24 @@
-BD VulnSite
-==============
-Тестовый сайт с уязвимостями:
-1) SQL Injection
-2) Cross-Site Scripting (XSS)
-3) Command Injection
-4) Local File Include (LFI)
-5) раскрытие данных
-6)Сross Site Request Forgery (CSRF)
+# BD VulnSite
+
+**ВНИМАНИЕ:** этот проект содержит намеренные уязвимости.
+Запускайте только в изолированной среде. Автор не несёт ответственности
+за любой ущерб.
+
+## Уязвимости
+| Уязвимость | Файл | Параметр |
+|---|---|---|
+| SQL Injection (auth bypass) | login.php | username/password |
+| SQL Injection (union) | comments.php | search |
+| XSS (reflected) | comments.php | search |
+| XSS (stored) | comments.php | name/comment |
+| Command Injection | monitor.php | type |
+| LFI | monitor.php | page |
+| CSRF | comments.php | POST |
+
+## Быстрый старт (Docker)
+```bash
+docker compose up -d
+# открыть http://localhost:8080
 
 Создан для базового изучения Web уязвимостей.
 
