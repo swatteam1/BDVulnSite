@@ -1,45 +1,35 @@
 # BD VulnSite
 
-**ВНИМАНИЕ:** этот проект содержит намеренные уязвимости.
-Запускайте только в изолированной среде. Автор не несёт ответственности
-за любой ущерб.
+Учебный сайт с намеренными уязвимостями для изучения веб-безопасности.
+
+## ВНИМАНИЕ
+
+Проект содержит намеренные уязвимости и предназначен **только для локального обучения** в изолированной среде. Не выкладывайте его в публичный доступ и не запускайте на серверах, доступных из интернета. Автор не несёт ответственности за любой ущерб, вызванный использованием этого кода.
 
 ## Уязвимости
+
 | Уязвимость | Файл | Параметр |
 |---|---|---|
-| SQL Injection (auth bypass) | login.php | username/password |
-| SQL Injection (union) | comments.php | search |
-| XSS (reflected) | comments.php | search |
-| XSS (stored) | comments.php | name/comment |
+| SQL Injection (обход аутентификации) | login.php | username, password |
+| SQL Injection (UNION) | comments.php | search |
+| Reflected XSS | comments.php | search |
+| Stored XSS | comments.php | name, comment |
 | Command Injection | monitor.php | type |
-| LFI | monitor.php | page |
+| Local File Inclusion (LFI) | monitor.php | page |
 | CSRF | comments.php | POST |
+| Раскрытие данных | login.php | сообщения об ошибках |
+
+## Требования
+
+- Docker
+- Docker Compose
+
+Для запуска без Docker:
+
+- Apache
+- PHP 8.0+ с расширением mysqli
+- MySQL 5.7+ или MariaDB 10.3+
 
 ## Быстрый старт (Docker)
-```bash
-docker compose up -d
-# открыть http://localhost:8080
 
-Создан для базового изучения Web уязвимостей.
-
-Системные требования
---------------------
-Для установки требуется:
-Apache
-PHP
-MySQL/MariaDB
-
-Установка
----------
-1) Скопировать файлы в директорию Web сервера
-2) Создать базу данных
-3) Указать настройки базы данных в файле config.php
-4) Выпонить скрипт install.php для заполнения базы данных
-
-Что дальше
-----------
-Посетите наш сайт, посвященный обучению тестированию на проникновение.
-
-Команда сайта BlackDiver.Net
-
-[https://BlackDiver.Net](https://blackdiver.net)
+1. Клонировать репозиторий:

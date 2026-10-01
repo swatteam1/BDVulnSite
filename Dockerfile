@@ -1,9 +1,13 @@
 FROM php:8.2-apache
-# Устанавливаем mysqli
-RUN docker-php-ext-install mysqli
-RUN a2enmod rewrite
-# Копируем файлы проекта
+
+RUN docker-php-ext-install mysqli && a2enmod rewrite
+
 COPY . /var/www/html/
-# Права для www-data
+
+# Файлы с флагами вне web-директории
+RUN echo 'flag{;cat_/etc/passwd}' > /flag_cmd.txt && \
+    echo 'flag{../../../../etc/passwd}' > /flag_lfi.txt
+
 RUN chown -R www-data:www-data /var/www/html
+
 EXPOSE 80
